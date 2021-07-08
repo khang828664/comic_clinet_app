@@ -1,0 +1,35 @@
+export const hardData = [
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+{
+  "Image":"app/assets/demo_4.jpg"
+},
+]
