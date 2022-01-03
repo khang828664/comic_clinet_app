@@ -26,17 +26,21 @@ export default function* createUserAsync({ userData }: ReturnType<typeof loginAc
   //const response = yield call(loginUser, action.username, action.password);
   //mock response
   // const response = { success: true, data: { id: 1 }, message: 'Success' };
-
   const response: serverResponse = yield call(createAccount, userData)
-  if (response.data.result) {
-    yield put(loginActions.responseUser(response.data.data));
-    yield put(loginActions.disableLoader());
-
+  console.log(response)
+  if (response) {
+    if (response.data.result) {
+      yield put(loginActions.responseUser(response.data.data));
+      yield put(loginActions.disableLoader());
+    } else {
+      yield put(loginActions.loginFailed());
+      yield put(loginActions.disableLoader());
+    }
   } else {
     yield put(loginActions.loginFailed());
     yield put(loginActions.disableLoader());
     Alert.alert(
       "Error",
-      "Username and Password incorrect")
+      "Network Error please check it again")
   }
 }

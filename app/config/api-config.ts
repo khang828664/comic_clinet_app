@@ -1,10 +1,10 @@
 /* App config for apis
  */
 const ApiConfig = {
-  BASE_URL: 'http://192.168.1.3:3000/',
+  BASE_URL: 'http://192.168.1.6:3000/',
   USER :{
     LOGIN: 'api/users/login',
-    LISTPOST:'api/users/comic/id',
+    LIST_POST:'api/users/comic/id',
     CREATE:'api/users/create'
   },
   Image:{
@@ -13,21 +13,25 @@ const ApiConfig = {
     ChapterImage:'api/image/image/0/'
   },
   COMIC:{
-    lISTCOMIC:'api/comic/get/',
-    COMICINFO:'api/comic/',
-    COMICALL:'api/comic/all',
-    SEARCHAUTHOR:'api/comic/search/author',
-    SEARCHNAME :'api/comic/search/name',
+    lIST_COMIC:'api/comic/get/',
+    COMIC_INFO:'api/comic/',
+    COMIC_CALL:'api/comic/all',
+    SEARCH_AUTHOR:'api/comic/search/author',
+    SEARCH_NAME :'api/comic/search/name',
     BOOKMARK:'api/comic/bookmark/',
-    GETBOOKMARK:'api/comic/get/bookmark/',
+    GET_BOOKMARK:'api/comic/get/bookmark/',
     LIKE:'api/comic/like',
     CREATE:'api/comic/create',
     UPDATE:'api/comic/update',
-    UPLOADCOVER:'api/comic/upload/cover',
-    DELETE:'api/comic/delete/hard'
+    UPLOAD_COVER:'api/comic/upload/cover',
+    DELETE:'api/comic/delete/hard',
+    GET_COMMENT:'api/comic/comment/get',
+    POST_COMMENT: 'api/comic/comment/post',
+    POST_REVIEW:'api/comic/review/post',
+    GET_REVIEW:'api/comic/review/get', 
   }, 
   CHAPTER:{
-    LISTCHAPTER:'api/chapter/list/'
+    LIST_CHAPTER:'api/chapter/list/'
   }
 };
 export default ApiConfig;

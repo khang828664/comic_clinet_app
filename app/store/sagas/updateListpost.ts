@@ -37,7 +37,7 @@ export default function* updateListPostAsync({ _idUser }: ReturnType<typeof logi
         "Error",
         "Username and Password incorrect")
     }
-  } catch (err) {
+  } catch (err:any) {
       Alert.alert(
         "Error",
         err.toString()

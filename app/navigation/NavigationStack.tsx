@@ -12,6 +12,7 @@ import Bookmark from 'app/screens/Bookmark'
 import History from 'app/screens/History'
 import ComicCreate from 'app/screens/CreateComic'
 import UpdateComic from 'app/screens/UpdateComicInfo'
+import ForgetComic from 'app/screens/ForgotPassword'
 import ThemeController from '../components/ThemeController';
 import ComicRead from 'app/screens/ComicRead'
 import { StatusBar } from 'react-native';
@@ -91,17 +92,17 @@ const UserInfoNavigator = () => (
       options={{ headerShown: false }}
     />
     <UserInfoStack.Screen
-      name= "CreateComic"
+      name="CreateComic"
       component={ComicCreate}
-      options = {{
-        headerShown:true
+      options={{
+        headerShown: true
       }}
     />
-     <UserInfoStack.Screen
-      name= "UpdateComic"
+    <UserInfoStack.Screen
+      name="UpdateComic"
       component={UpdateComic}
-      options = {{
-        headerShown:true
+      options={{
+        headerShown: true
       }}
     />
     {/* <BookmarkStack.Screen name="ComicInfo" component={ComicInfo} /> */}
@@ -121,27 +122,27 @@ const BottomBarNavigator = () => (
       component={HomeNavigator}
       options={{
         tabBarLabel: 'Home',
-        tabBarIcon: ({ color }:any) => <Icon name="home" color={color} size={20} solid={true} />
+        tabBarIcon: ({ color }: any) => <Icon name="home" color={color} size={20} solid={true} />
       }}
     ></BottomBar.Screen>
     <BottomBar.Screen
       name="Bookmark" component={BookmarkNavigator}
       options={{
         tabBarLabel: 'Bookmark',
-        tabBarIcon: ({ color }:any) => <Icon name="bookmark" color={color} size={20} solid={true} />
+        tabBarIcon: ({ color }: any) => <Icon name="bookmark" color={color} size={20} solid={true} />
       }}
     ></BottomBar.Screen>
     <BottomBar.Screen
       name="History" component={HistoryNavigator}
       options={{
         tabBarLabel: 'History',
-        tabBarIcon: ({ color }:any ) => <Icon name="clock" color={color} size={20} solid={true} />
+        tabBarIcon: ({ color }: any) => <Icon name="clock" color={color} size={20} solid={true} />
       }}
     ></BottomBar.Screen>
     <BottomBar.Screen
       name="UserInfo" component={UserInfoNavigator} options={{
         tabBarLabel: 'UserInfo',
-        tabBarIcon: ({ color }:any) => <Icon name="meh" color={color} size={20} solid={true} />
+        tabBarIcon: ({ color }: any) => <Icon name="meh" color={color} size={20} solid={true} />
       }}
     ></BottomBar.Screen>
   </BottomBar.Navigator>
@@ -158,10 +159,10 @@ const StackNavigator = () => (
     />
     <Stack.Screen name="ComicRead" component={ComicRead} options={{
       headerShown: false
-    }}/>
-     <Stack.Screen name="ComicInfo" component={ComicInfo} 
+    }} />
+    <Stack.Screen name="ComicInfo" component={ComicInfo}
       options={{
-        headerShown:false
+        headerShown: false
       }}
     />
   </Stack.Navigator>
@@ -180,6 +181,10 @@ const LoginStackNavigator = () => (
     <LoginStack.Screen
       name="Register"
       component={Register}
+    />
+    <LoginStack.Screen
+      name="ForgotPassword"
+      component={ForgetComic}
     />
   </LoginStack.Navigator>
 )

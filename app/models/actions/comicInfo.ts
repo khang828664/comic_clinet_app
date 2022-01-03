@@ -24,9 +24,9 @@ export interface IComicInfoResponsePayload {
   response: IComicInfoResponse;
 }
 
-//Chapter 
-///
-/////
+/**
+ * Chapter
+ */
 export interface IChapterResponsePayload {
   type: String;
   response: IChapterResponse

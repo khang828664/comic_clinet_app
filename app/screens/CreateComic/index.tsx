@@ -39,8 +39,8 @@ function CreateComic({ route }: any) {
         Alert.alert("Create", "Success")
         NavigationService.goBack()
       }
-    } catch (err) {
-      Alert.alert("Err", err.toString())
+    } catch (e: any) {
+      Alert.alert("Error", e.message)
     }
   }
   const UploadImage = () => {
