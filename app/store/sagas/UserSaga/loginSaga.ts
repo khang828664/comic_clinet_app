@@ -27,15 +27,13 @@ export default function* loginAsync({ username, password }: ReturnType<typeof lo
   //mock response
   // const response = { success: true, data: { id: 1 }, message: 'Success' };
   try {
-  const response: serverResponse = yield call(loginUser, username, password)
-  console.log(response.data.data._id)
-  const responseList: serverResponse = yield call(getListPost, response.data.data._id)
-  console.log()
-  let sumResponse = {
-    userInfo: response.data.data,
-    listPost: responseList.data.data
-  }
- 
+    const response: serverResponse = yield call(loginUser, username, password)
+    const responseList: serverResponse = yield call(getListPost, response.data.data._id)
+    let sumResponse = {
+      userInfo: response.data.data,
+      listPost: responseList.data.data
+    }
+
     if (response.data.result) {
       yield put(loginActions.onLoginResponse(sumResponse));
       yield put(loginActions.disableLoader());
@@ -47,10 +45,10 @@ export default function* loginAsync({ username, password }: ReturnType<typeof lo
         "Error",
         "Username and Password incorrect")
     }
-  } catch (err) {
-      Alert.alert(
-        "Error",
-        err.toString()
-      )
+  } catch (err: any) {
+    Alert.alert(
+      "Error",
+      "Network error please check it again"
+    )
   }
 }

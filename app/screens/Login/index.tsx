@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Keyboard, Image, Alert } from 'react-native';
+import { View, TextInput, Keyboard, Image, Alert, ScrollView } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import *as loginActions from 'app/store/actions/loginActions';
@@ -8,6 +8,10 @@ import { ILoginState } from 'app/models/reducers/login';
 import NavigationService from 'app/navigation/NavigationService';
 import images from 'app/config/images'
 import { ILoading } from 'app/models/reducers/loading';
+import Icons from 'react-native-vector-icons/FontAwesome'
+import FormLogin from './Form/LoginForm'
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import AppStyles from 'app/config/styles';
 interface IState {
   loginReducer: ILoginState;
   loadingReducer: ILoading
@@ -45,34 +49,63 @@ const Login: React.FC = () => {
         }
       </View>
       {/* Login form */}
-      <View style={styles.loginStyle}>
-        <Text style={styles.textStyle}>Username</Text>
-        <TextInput
-          onChangeText={(text: string) => { setUsername(text) }}
-          style={styles.inputStyle}
-        ></TextInput>
-        <Text style={styles.textStyle}>Password</Text>
-        <TextInput
-          onSubmitEditing={onLogin}
-          onChangeText={(text: string) => { setPassword(text) }}
-          style={styles.inputStyle}
-        ></TextInput>
-        <Button
-          mode="text"
-          style={styles.forgot}
-          labelStyle={styles.labelStyle}
-          onPress={onForgot}>
-          Forgot Password
-        </Button>
-        <Button
-          mode="text"
-          style={styles.forgot}
-          labelStyle={styles.labelStyle}
-          onPress={onRegister}>
-          Register Account
-        </Button>
-      </View>
+      <FormLogin
+        SetUsername={(text: string) => { setUsername(text) }}
+        SetPassword={(text: string) => { setPassword(text) }}
+      />
       {/* Login form */}
+      <Button
+        mode='outlined'
+        onPress={onLogin}
+        labelStyle={{ fontSize: 20 }}
+        style={styles.loginButton}
+      >Login</Button>
+      <Button
+        mode="outlined"
+        style={styles.registerButton}
+        labelStyle={{ fontSize: 12 }}
+        onPress={onRegister}>
+        Register Account
+      </Button>
+      <View style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingHorizontal: "20%",
+        margin: "2.5%"
+      }}>
+        <Icons name="facebook"
+          size={20}
+          style={styles.IconSocialStyle}
+          color='#ff0000'
+          onPress={() => console.log("login facebook")} />
+        <Icons name="google"
+          size={20}
+          style={styles.IconSocialStyle}
+          color='#ff0000'
+          onPress={() => console.log("login google")}
+        />
+        <Icons name="twitter"
+          size={20}
+          style={styles.IconSocialStyle}
+          color='#ff0000'
+          onPress={() => console.log("login twitter")}
+        />
+      </View>
+      <View style={{
+        alignSelf: "flex-end",
+        justifyContent: "center",
+
+      }}>
+        <TouchableOpacity
+          onPress={onForgot}
+        >
+          <Text
+            style={{
+              color: AppStyles.color.COLOR_BLUE
+            }}
+          >Forget password</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

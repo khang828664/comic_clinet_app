@@ -30,6 +30,8 @@ interface ComicInfo {
    View:number;
    Cover:string;
    Chapter:string[]
+   Comment:string []
+   Review:string [] 
  }
  
  

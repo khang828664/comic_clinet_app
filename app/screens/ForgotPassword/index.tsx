@@ -5,7 +5,7 @@ import { Button } from 'react-native-paper';
 import NavigationService from 'app/navigation/NavigationService';
 
 import styles from './styles';
-const Home: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   const goBack = () => NavigationService.goBack();
   return (
     <View style={styles.container}>
@@ -16,4 +16,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default ForgotPassword;

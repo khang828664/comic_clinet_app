@@ -3,12 +3,12 @@
  */
 import { takeEvery, all, takeLatest } from 'redux-saga/effects';
 import * as types from '../actions/types';
-import loginSaga from './loginSaga';
+import loginSaga from './UserSaga/loginSaga';
 import loadComicSaga from './ComicSaga/listComicSaga'
 import infoComicSaga from './ComicSaga/infoComicSaga'
 import searchComicSaga from './ComicSaga/searchComicSage'
 import listBookmarkSaga from './ComicSaga/listBookmarkSaga'
-import createUserSaga  from './createUser'
+import createUserSaga  from './UserSaga/createUser'
 import updateListPost  from  './updateListpost'
 
 export default function* watch() {
